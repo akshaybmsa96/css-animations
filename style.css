@@ -2,37 +2,85 @@ body {
   margin: 0;
 }
 .parent {
-  padding: 100px;
   background: #333;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 div {
   height: 40px;
   width: 40px;
+  margin: 50px;
 }
 
 .div-1 {
   background: red;
-  transform: rotate(45deg);
-  transition: 2s;
+  animation: rotate-infinite infinite 1.5s;
+}
+
+@keyframes rotate-infinite {
+  0% {
+    transform: translateX(45px);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: translateX(40px);
+  }
 }
 
 .div-2 {
   background: green;
-  transform: translateX(140px);
-  transition: 1.25s;
+  animation: move-left-right infinite 1.25s;
+}
+
+@keyframes move-left-right {
+  25% {
+    transform: translateX(-40px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
 }
 
 .div-3 {
   background: blue;
-  transform: scale(5, 1);
-  transition: 1.5s;
+  animation: enlarge-and-shrink infinite 1.5s;
+}
+
+@keyframes enlarge-and-shrink {
+  50% {
+    transform: scale(10, 2);
+  }
 }
 
 .div-4 {
   background: yellow;
-  transform: translate(120px, 200px);
-  transition: 1.75s;
+  animation: x-and-y infinite 1.75s;
+}
+
+@keyframes x-and-y {
+  25% {
+    transform: translate(100px);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  75% {
+    transform: translate(0px, 100px);
+  }
+  85% {
+    transform: translate(0px, 100px);
+  }
 }
